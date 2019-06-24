@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*-coding:Utf-8 -*-
-### Creates a backup on a remote server of your website and its mysql database  ###
+### Creates a backup on a remote server of your website and its mysql database
 #This script was created and tested in June 2019, on a Debian machine
-#DATE 24/06/2019
+#DATE 24/06/2019###
 
 
 
