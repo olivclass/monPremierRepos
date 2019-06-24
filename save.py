@@ -53,13 +53,13 @@ except OSError as e: ## if failed, report it back to the user ##
 #Backup of the website /var/www in the folder on the web server (web) 
 try:
     print("folder compression started /var/www")
-    os.system('tar -cf '+web['folder_backup']+'/www.tar '+web['folder_wordpress'])
-  
+    os.system('tar -cf '+web['folder_backup']+'/www'+date+'.tar '+web['folder_wordpress'])
 except OSError as e: ## if failed, report it back to the user ##
     print('error encountered when saving website files',e)
 
 #Backup of files on the remote server
-os.system('rsync -vr '+web['folder_backup']+'/'' '+REMOTE['user']+'@'+REMOTE['server']+':'+REMOTE['folder_ansible'])
+os.system('rsync -vrhP '+web['folder_backup']+'/'' '+REMOTE['user']+'@'+REMOTE['server']+':'+REMOTE['folder_ansible'])
+
 #Deletes the temporary backup directory on the web server
 print("delete the temporary backup directory on the web server")
 shutil.rmtree(dirName)
