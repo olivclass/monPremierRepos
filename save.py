@@ -20,20 +20,20 @@ date = d.strftime("%d%m%y")
 
 #web server's variables 
 web = {
-        'folder_wordpress' : '/var/www/',      #name of the directory containing the website on the local server
-        'folder_backup' : '/tmp/backup',       #name of the directory which use for the backup 
-        'wp_mysql_db' : 'wordpress',           #name of the mysql database user 
-        'wp_mysql_user' : 'wordpressuser',     #name of the mysql database
-        'wp_mysql_password' : 'sysadmin',      #password of the user account of the mysql database
+        'folder_wordpress' : '****',    #name of the directory containing the website on the local server
+        'folder_backup' : '****',       #name of the directory which use for the backup 
+        'wp_mysql_db' : '*****',        #name of the mysql database user 
+        'wp_mysql_user' : '*****',      #name of the mysql database
+        'wp_mysql_password' : '******', #password of the user account of the mysql database
 }
 
 dirName=web['folder_backup']
 
 #backup server's variables
 REMOTE = {
-        'folder_ansible' : '/etc/ansible/roles/files/', #remote server backup directory
-        'server' : 'REMOTE',                            #Name of the remote machine for backup
-        'user' : 'root',                                #Username of the remote server account for the ssh connection
+        'folder_ansible' : '*****',      #remote server backup directory
+        'server' : '*****',              #Name of the remote machine for backup
+        'user' : '*****',                #Username of the remote server account for the ssh connection
 
 }
 
