@@ -2,6 +2,10 @@
 Projet de sauvegarde d'un site web fonctionnant avec Apache et du CMS Wordpress:
 - le script va sauvegarder la base de données MYSQL ainsi que le contenu du site web dans le dossier /var/www et exporté les sauvegardes sur un serveur distant.
 
+Pour ce projet voici ma configuration:
+ - un serveur web sous Debian, avec rsync, openssh-server, apache2, wordpress, mysql-server.
+ - un serveur de sauvegarde sous Debian, avec rsync, openssh-server.
+
 Création:
 Ce script a été crée et testé en Juin 2019, sur une machine linux "Debian" version 9 et de python version 2.7.13.
 
@@ -9,6 +13,7 @@ Prérequis:
 - Télécharger le script "save.py"
 - Il est nécessaire de disposer des paquets "rsync" et "openssh-server" sur les machines locale et distante. Si nécessaire vous devez l'installer: apt-get install rsync openssh-server.
 - Les machines locale et distante doivent communiquer entre elles.
+- Disposer des droits superutilisateurs ( soit avec sudo ou le compte "root")
 
 Utilisation:
 - Vous devez renseigner les variables du serveur web à sauvegarder, en remplacant les "*****" par le nom et le chemin de:
@@ -45,13 +50,14 @@ Pour les contributeurs:
 Les variables des serveurs local et distant sont regroupées pour chaque serveur afin d'apporter de la lisibilité et d'éviter les erreurs d'affectation.
 Exemple:
 Déclaration de la variable:
-#REMOTE = {
-        'folder_ansible' : '*****'
+  #REMOTE = {
+              'folder_ansible' : '*****'
+
 Utilisation de la variable:
-'+REMOTE['folder_ansible']
+ '+REMOTE['folder_ansible']
         
  Les étapes du script en détail:
- - importation des librairies:
+ - importation des modules:
    - subprocess,
    - os,
    - datetime,
@@ -62,7 +68,15 @@ Utilisation de la variable:
  
  - Affectation des configurations des serveurs aux variables
  
- - Affection du répertoire de sauvegarde 
+ - Création du répertoire de sauvegarde temporaire sur le serveur web, s'il n'existe pas
+
+ - Sauvegarde de la base de données Mysql
+ 
+ - Sauvegarde du dossier du site web (ici j'utilise apache donc le dossier est situé dans /var/www) sous la forme d'une archive TAR
+ 
+ - Copie des sauvegardes dans le dossier de destination du serveur distant ( j'ai utilisé les paramètres -hP pour afficher la progression et les tailles des fichiers en Ko,Mo)
+ 
+ - Suppression du dossier temporaire de sauvegarde sur le serveur local
         
         
         
