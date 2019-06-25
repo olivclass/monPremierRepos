@@ -1,9 +1,12 @@
 #!/usr/bin/python
 # -*-coding:Utf-8 -*-
-### Creates a backup on a remote server of your website and its mysql database
+#####################################
+#This script creates a backup on a remote server of your website and its mysql database
 #This script was created and tested in June 2019, on a Debian machine
-#DATE 24/06/2019###
-
+#DATE 24/06/2019
+#Created  by olivier
+#Python version: 2.7.13
+####################################
 
 
 import subprocess
@@ -18,6 +21,7 @@ from time import strftime
 d = datetime.now()
 date = d.strftime("%d%m%y")
 
+#modify the ***** by the locations of your folders, user names and machine name and password
 #web server's variables 
 web = {
         'folder_wordpress' : '****',    #name of the directory containing the website on the local server
