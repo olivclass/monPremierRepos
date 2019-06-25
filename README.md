@@ -50,7 +50,7 @@ Pour les contributeurs:
 Les variables des serveurs local et distant sont regroupées pour chaque serveur afin d'apporter de la lisibilité et d'éviter les erreurs d'affectation.
 Exemple:
 Déclaration de la variable:
-  #REMOTE = {
+  REMOTE = {
               'folder_ansible' : '*****'
 
 Utilisation de la variable:
