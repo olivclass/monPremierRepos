@@ -38,6 +38,34 @@ Ci-dessous les variables précédemment citées avec un exemple:
         'server' : 'REMOTE',                            #Name of the remote machine for backup
         'user' : 'root',                                #Username of the remote server account for the ssh connection
         
+Les fichiers "*.tar" (sauvegarde des fichiers du site web) et "*.sql" (sauvegarde de la base de données mysql) seront datés de la date du jour de l'exécution du script.
+
+Pour les contributeurs:
+
+Les variables des serveurs local et distant sont regroupées pour chaque serveur afin d'apporter de la lisibilité et d'éviter les erreurs d'affectation.
+Exemple:
+Déclaration de la variable:
+#REMOTE = {
+        'folder_ansible' : '*****'
+Utilisation de la variable:
+'+REMOTE['folder_ansible']
+        
+ Les étapes du script en détail:
+ - importation des librairies:
+   - subprocess,
+   - os,
+   - datetime,
+   - time,
+   - shutil
+ 
+ - Affectation de la date à une variable
+ 
+ - Affectation des configurations des serveurs aux variables
+ 
+ - Affection du répertoire de sauvegarde 
+        
+        
+        
 
    
         
