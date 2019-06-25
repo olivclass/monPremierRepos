@@ -22,8 +22,8 @@ date = d.strftime("%d%m%y")
 web = {
         'folder_wordpress' : '****',    #name of the directory containing the website on the local server
         'folder_backup' : '****',       #name of the directory which use for the backup 
-        'wp_mysql_db' : '*****',        #name of the mysql database user 
-        'wp_mysql_user' : '*****',      #name of the mysql database
+        'wp_mysql_db' : '*****',        #name of the mysql database  
+        'wp_mysql_user' : '*****',      #name of the mysql database user
         'wp_mysql_password' : '******', #password of the user account of the mysql database
 }
 
