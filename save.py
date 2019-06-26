@@ -51,6 +51,7 @@ else:
 #Backup of the mysql database in the folder on the web server
 try:    
     os.system('mysqldump -u '+web['wp_mysql_user']+' -p'+web['wp_mysql_password']+' -d '+web['wp_mysql_db']+' > '+web['folder_backup']+'/wordpress-mysql'+date+'.sql')
+    os.system('mysqldump --all-databases --single-transaction --quick --lock-tables=false -u root -p' +web['wp_mysql_password']+' > '+web['folder_backup']+'/wordpress-mysql.sql')
 except OSError as e: ## if failed, report it back to the user ##
     print('error encountered when saving the database',e)
 
