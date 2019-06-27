@@ -79,8 +79,8 @@ Utilisation de la variable:
  
  - Suppression du dossier temporaire de sauvegarde sur le serveur local
         
-        
-        
+# LICENCE
+"This project is licensed under the terms of the GPLv3 license."
 
    
         
