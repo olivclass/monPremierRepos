@@ -33,8 +33,8 @@ Ci-dessous les variables précédemment citées avec un exemple:
 
         'folder_wordpress' : '/var/www/',      #name of the directory containing the website on the local server
         'folder_backup' : '/tmp/backup',       #name of the directory which use for the backup 
-        'wp_mysql_db' : 'wordpress',           #name of the mysql database user 
-        'wp_mysql_user' : 'wordpressuser',     #name of the mysql database
+        'wp_mysql_db' : 'wordpress',           #name of the mysql database
+        'wp_mysql_user' : 'wordpressuser',     #name of the mysql database user
         'wp_mysql_password' : 'sysadmin',      #password of the user account of the mysql database
 
 
